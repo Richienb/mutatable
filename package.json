@@ -1,6 +1,6 @@
 {
     "name": "mutatable",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "A mutatable value that can still be changed after being exported.",
     "repository": "https://github.com/Richienb/mutatable.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
