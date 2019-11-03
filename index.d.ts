@@ -1,14 +1,25 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * A mutatable object that can still be changed after being exported.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const Mutatable = require("mutatable");
+ * const myVal = new Mutatable();
+ *
+ * someAsyncOperation().then(res => myVal.exportable = res)
+ *
+ * module.exports = myVal.exportable
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare class Mutatable {
+    /**
+     * @param initialData The intial data to set.
+    */
+    constructor(initialData?: any): void
 
-export = theModule;
+    /**
+     * The value which can be exported and modified.
+     */
+    public exportable: any
+}
+
+export = Mutatable;

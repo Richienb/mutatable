@@ -1,13 +1,18 @@
 import test from "ava"
-import theModule from "."
+import Mutatable from "."
 
 test("main", (t) => {
-    t.throws(() => {
-        theModule(123)
-    }, {
-        instanceOf: TypeError,
-        message: "Expected a string, got number",
-    })
+    const obj = new Mutatable()
 
-    t.is(theModule("unicorns"), "unicorns & rainbows")
+    t.falsy(obj.exportable)
+
+    obj.exportable = "Hello!"
+
+    t.is(obj.exportable, "Hello!")
+})
+
+test("initial value", (t) => {
+    const obj = new Mutatable("Hello!")
+
+    t.is(obj.exportable, "Hello!")
 })

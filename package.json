@@ -1,8 +1,8 @@
 {
-    "name": "the-module",
+    "name": "mutatable",
     "version": "0.0.0",
-    "description": "My awesome module.",
-    "repository": "https://github.com/Richienb/the-module.git",
+    "description": "A mutatable value that can still be changed after being exported.",
+    "repository": "https://github.com/Richienb/mutatable.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "main": "index.js",
@@ -11,13 +11,19 @@
         "index.d.ts"
     ],
     "engines": {
-        "node": ">=8"
+        "node": ">=4"
     },
     "scripts": {
         "lint": "eslint .",
         "test": "yarn lint && ava"
     },
-    "keywords": [],
+    "keywords": [
+        "mutable",
+        "change",
+        "export",
+        "modify",
+        "global"
+    ],
     "dependencies": {},
     "devDependencies": {
         "ava": "^2.1.0",

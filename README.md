@@ -1,41 +1,40 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Mutatable [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/mutatable/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/mutatable)
 
-My awesome module.
+A mutatable value that can still be changed after being exported.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/mutatable.png)](https://npmjs.com/package/mutatable)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install mutatable
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const Mutatable = require("mutatable");
+const myVal = new Mutatable();
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+someAsyncOperation().then(res => (myVal.exportable = res));
+
+module.exports = myVal.exportable;
 ```
 
 ## API
 
-### theModule(input, options?)
+### `class` Mutatable(initialData?)
 
-#### input
+#### initialData
 
-Type: `string`
+Type: `any`
 
-Lorem ipsum.
+The intial data to set.
 
-#### options
+### `instance` Mutatable
 
-Type: `object`
+#### exportable
 
-##### postfix
+Type: `any`
 
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The value which can be exported and modified.
